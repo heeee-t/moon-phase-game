@@ -8,7 +8,7 @@ export default defineConfig(() => {
   const isSingleFile = process.env.BUILD_SINGLEFILE === 'true';
 
   return {
-    base: './', // Ensures assets load correctly on GitHub Pages (https://<username>.github.io/<repo>/)
+    base: '/moon-phase-game/', // Ensures assets load correctly on GitHub Pages (https://<username>.github.io/<repo>/)
     plugins: [
       react(),
       tailwindcss(),
