@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Galmuri11', 'Galmuri9', 'DungGeunMo', monospace !important;
+  }
+
+  body {
+    font-family: 'Galmuri11', 'Galmuri9', 'DungGeunMo', monospace !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  p, span, div, h1, h2, h3, h4, button, input, label {
+    word-break: keep-all;
+  }
+}
+
+.text-justify-korean {
+  text-align: justify;
+  text-justify: inter-word;
+  word-break: keep-all;
+}
+
+/* CRT Scanline & Curved Screen Overlay */
+.crt-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-screen::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.28) 50%);
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Screen Glass Subtle Reflection */
+.crt-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  z-index: 11;
+}
+
+.arcade-btn {
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.arcade-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Touch and mobile interaction optimizations */
+button, [role="button"], path {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 235, 59, 0.6), inset 0 0 6px rgba(255, 235, 59, 0.3);
+    border-color: #facc15;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 235, 59, 0.9), inset 0 0 12px rgba(255, 235, 59, 0.5);
+    border-color: #ffffff;
+  }
+}
+
+.neon-active {
+  animation: neonGlow 1.4s ease-in-out infinite;
+}
+
+/* Grid radar background for target interactive area */
+.radar-grid {
+  background-image: 
+    linear-gradient(rgba(34, 197, 94, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.12) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
