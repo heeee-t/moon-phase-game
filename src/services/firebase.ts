@@ -32,7 +32,7 @@ import { ScoreRecord } from '../types/game';
  */
 
 // If window.FIREBASE_CONFIG is injected or configured in HTML, use it; otherwise use env or fallback
-const firebaseConfig = {
+const DEFAULT_CONFIG = {
   apiKey: "AIzaSyDDDC-KfLl4Jw0FBGJRvO5JqElhsR-w1hE",
   authDomain: "moon-phase-game-ccd21.firebaseapp.com",
   projectId: "moon-phase-game-ccd21",
