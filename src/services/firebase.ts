@@ -40,8 +40,6 @@ const DEFAULT_CONFIG = {
   appId: "1:402024479689:web:e353b24d005a2fd4154618"
 };
 
-const DEFAULT_CONFIG = firebaseConfig;
-
 // Check if config has valid project information (not empty or default placeholder)
 export function isFirebaseConfigured(): boolean {
   if (typeof window !== 'undefined' && (window as unknown as { FIREBASE_CONFIG?: Record<string, string> }).FIREBASE_CONFIG?.projectId) {
