@@ -146,6 +146,21 @@ export default function App() {
     pickNextQuestion();
   };
 
+  // Return to initial start screen
+  const handleGoToStart = () => {
+    sound.playClick(440);
+    setGameState('START');
+    setScore(0);
+    setTimeLeft(90);
+    setComboCount(0);
+    setMaxCombo(0);
+    setCorrectCount(0);
+    setTotalAttempts(0);
+    setHasSavedScore(false);
+    setPlayerName('');
+    lastCorrectTimeRef.current = 0;
+  };
+
   // Timer Tick (Automatically pauses when isAlmanacOpen or isLeaderboardOpen is true)
   useEffect(() => {
     if (gameState === 'PLAYING' && !isAlmanacOpen && !isLeaderboardOpen) {
@@ -533,7 +548,7 @@ export default function App() {
               <div className="flex gap-2 w-full pt-1 shrink-0">
                 <button
                   type="button"
-                  onClick={handleStartGame}
+                  onClick={handleGoToStart}
                   className="flex-1 py-2.5 sm:py-3.5 bg-yellow-400 hover:bg-yellow-300 text-zinc-950 font-black text-xs sm:text-sm rounded-xl arcade-btn shadow-[0_3px_0_#ca8a04] sm:shadow-[0_4px_0_#ca8a04] flex items-center justify-center gap-1.5 border border-yellow-200"
                 >
                   <RotateCcw className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
