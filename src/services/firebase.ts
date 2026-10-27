@@ -31,7 +31,6 @@ import { ScoreRecord } from '../types/game';
  *    }
  */
 
-// If window.FIREBASE_CONFIG is injected or configured in HTML, use it; otherwise use env or fallback
 const DEFAULT_CONFIG = {
   apiKey: "AIzaSyDDDC-KfLl4Jw0FBGJRvO5JqElhsR-w1hE",
   authDomain: "moon-phase-game-ccd21.firebaseapp.com",
@@ -40,6 +39,8 @@ const DEFAULT_CONFIG = {
   messagingSenderId: "402024479689",
   appId: "1:402024479689:web:e353b24d005a2fd4154618"
 };
+
+const DEFAULT_CONFIG = firebaseConfig;
 
 // Check if config has valid project information (not empty or default placeholder)
 export function isFirebaseConfigured(): boolean {
